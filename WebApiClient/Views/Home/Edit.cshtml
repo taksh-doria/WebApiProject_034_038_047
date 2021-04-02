@@ -1,0 +1,54 @@
+﻿@model RestApiStudentManagement.model.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="studentId" class="control-label" hidden></label>
+                <input asp-for="studentId" class="form-control" hidden/>
+                <span asp-validation-for="studentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rollnum" class="control-label"></label>
+                <input asp-for="rollnum" class="form-control" />
+                <span asp-validation-for="rollnum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cpi" class="control-label"></label>
+                <input asp-for="cpi" class="form-control" />
+                <span asp-validation-for="cpi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="branch" class="control-label"></label>
+                <input asp-for="branch" class="form-control" />
+                <span asp-validation-for="branch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
